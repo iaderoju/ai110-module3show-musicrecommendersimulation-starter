@@ -3,19 +3,15 @@
 ## 1. Model Name  
 
 Give your model a short, descriptive name.  
-Example: **VibeFinder 1.0**  
-
+TuneMaster
 ---
 
 ## 2. Intended Use  
 
 Describe what your recommender is designed to do and who it is for. 
 
-Prompts:  
+Music listeners that are trying to expand their musical horizon!
 
-- What kind of recommendations does it generate  
-- What assumptions does it make about the user  
-- Is this for real users or classroom exploration  
 
 ---
 
@@ -30,7 +26,9 @@ Prompts:
 - How does the model turn those into a score  
 - What changes did you make from the starter logic  
 
-Avoid code here. Pretend you are explaining the idea to a friend who does not program.
+Genre, mood, energy, acousticness is all things considered in scoring. The system takes all of these features into account
+and grades it by points to see if a song matches the user's taste based on those features.
+
 
 ---
 
@@ -45,6 +43,9 @@ Prompts:
 - Did you add or remove data  
 - Are there parts of musical taste missing in the dataset  
 
+In `data/songs.csv`, there are 10 songs. No songs were added or removed from the original catalog.
+Lofi takes 30% and Pop takes 20% of the catalog along with Rock, Ambient, Jazz, Synthwave and Indie pop taking the rest equally.
+The catalog skews toward mid-tempo, electronically-influenced, low-stress listening.
 ---
 
 ## 5. Strengths  
@@ -57,6 +58,8 @@ Prompts:
 - Any patterns you think your scoring captures correctly  
 - Cases where the recommendations matched your intuition  
 
+The recommender felt right when it ranked "Night Drive Loop" as #1 as it helped define the user's taste correctly in accordance with
+the genre and mood. The system can be verified easily by a user to debug.
 ---
 
 ## 6. Limitations and Bias 
@@ -70,20 +73,17 @@ Prompts:
 - Cases where the system overfits to one preference  
 - Ways the scoring might unintentionally favor some users  
 
+
+Many genres are left out I noticed and it goes by a one-size-fits all taste shape.
+It always goes by highest energy songs in the catalog. The unfairness yet again falls on the favoritism to a single genre.
+
 ---
 
 ## 7. Evaluation  
 
 How you checked whether the recommender behaved as expected. 
 
-Prompts:  
-
-- Which user profiles you tested  
-- What you looked for in the recommendations  
-- What surprised you  
-- Any simple tests or comparisons you ran  
-
-No need for numeric metrics unless you created some.
+-Inspected the baseline profile by running the main script, performed recommender tests, and conducted weight shift experiments.
 
 ---
 
@@ -91,13 +91,9 @@ No need for numeric metrics unless you created some.
 
 Ideas for how you would improve the model next.  
 
-Prompts:  
-
-- Additional features or preferences  
-- Better ways to explain recommendations  
-- Improving diversity among the top results  
-- Handling more complex user tastes  
-
+-Could add tempo range
+-Expand the data set and add a no match warning
+-User feedback loop
 ---
 
 ## 9. Personal Reflection  
@@ -109,3 +105,7 @@ Prompts:
 - What you learned about recommender systems  
 - Something unexpected or interesting you discovered  
 - How this changed the way you think about music recommendation apps  
+
+-Im honestly surprised how well the scoring system worked.
+Building this made me think about how I was introduced to new music through my use of spotify and how I can replicate that process
+here. I still believe that human judgement will matter because models don't have the artistic and creative mindset humans possess.
